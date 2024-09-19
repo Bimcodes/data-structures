@@ -1,5 +1,6 @@
 //import 'arrays.dart';
 
+import 'double_linked_list.dart';
 import 'linked_list.dart';
 
 void main() {
@@ -14,20 +15,24 @@ void main() {
   // // print(array.deleteSingleElement(arr, 9));
   // print(array.deleteEntireArray(10, arr + arr2));
 
-  LinkedList<int> list = LinkedList<int>();
+//   LinkedList<int> list = LinkedList<int>();
 
-  //Adding elements
-  list.append(10);
-  list.append(20);
-  list.append(30);
+//   //Adding elements
+//   list.append(10);
+//   list.append(20);
+//   list.append(30);
 
-  list.printAll();
+// // Search for an element
+//   print(list.contains(20));
+//   print(list.contains(40));
 
-  // Search for an element
-  print(list.contains(20));
-  print(list.contains(40));
+  DoubleLinkedList<int> dList = DoubleLinkedList<int>();
 
-  list.delete(20);
+  dList.append(20);
+  dList.append(25);
+  dList.append(45);
 
-  list.printAll();
+  //dList.printForward();
+  dList.printBackward();
+  print(dList.contains(60));
 }

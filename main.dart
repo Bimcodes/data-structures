@@ -1,5 +1,6 @@
 //import 'arrays.dart';
 
+import 'circular_singly_linked_list.dart';
 import 'double_linked_list.dart';
 import 'linked_list.dart';
 
@@ -26,13 +27,21 @@ void main() {
 //   print(list.contains(20));
 //   print(list.contains(40));
 
-  DoubleLinkedList<int> dList = DoubleLinkedList<int>();
+  // DoubleLinkedList<int> dList = DoubleLinkedList<int>();
 
-  dList.append(20);
-  dList.append(25);
-  dList.append(45);
+  // dList.append(20);
+  // dList.append(25);
+  // dList.append(45);
 
-  //dList.printForward();
-  dList.printBackward();
-  print(dList.contains(60));
+  // //dList.printForward();
+  // dList.printBackward();
+  // print(dList.contains(60));
+
+  CircularSinglyLinkedList<int> cList = CircularSinglyLinkedList<int>();
+
+  cList.append(23);
+  cList.append(-35);
+  cList.append(45);
+  cList.append(22);
+  cList.printAll();
 }

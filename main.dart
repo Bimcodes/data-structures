@@ -4,6 +4,7 @@ import 'dart:collection';
 
 import 'circular_singly_linked_list.dart';
 import 'double_linked_list.dart';
+import 'dsa_questions.dart';
 import 'linked_list.dart';
 
 void main() {
@@ -17,6 +18,9 @@ void main() {
 
   // // print(array.deleteSingleElement(arr, 9));
   // print(array.deleteEntireArray(10, arr + arr2));
+
+  DataStructureQuestions dividePlayers = DataStructureQuestions();
+  print(dividePlayers.dividePlayers([1,1,2,3]));
 
 //   LinkedList<int> list = LinkedList<int>();
 
@@ -107,33 +111,33 @@ void main() {
 
   // print(removeDuplicate([1, 1, 2]));
 
-  int? minSubArray(List<int> nums, int p) {
-    int sum = 0;
-    for (int i = 0; i < nums.length; i++) {
-      sum += nums[i];
-    }
-    int mod = sum % p;
-    if (mod == 0) {
-      return -1;
-    }
-    Map<int, int> prefixModIndex = {};
-    prefixModIndex[0] = -1;
-    int prefixSum = 0;
-    int minLength = nums.length;
+  // int? minSubArray(List<int> nums, int p) {
+  //   int sum = 0;
+  //   for (int i = 0; i < nums.length; i++) {
+  //     sum += nums[i];
+  //   }
+  //   int mod = sum % p;
+  //   if (mod == 0) {
+  //     return -1;
+  //   }
+  //   Map<int, int> prefixModIndex = {};
+  //   prefixModIndex[0] = -1;
+  //   int prefixSum = 0;
+  //   int minLength = nums.length;
 
-    for (int i = 0; i < nums.length; i++) {
-      prefixSum = (prefixSum + nums[i]) % p;
+  //   for (int i = 0; i < nums.length; i++) {
+  //     prefixSum = (prefixSum + nums[i]) % p;
 
-      int targetMod = (prefixSum - mod + p) % p;
-      if (prefixModIndex.containsKey(targetMod)) {
-        minLength = i - prefixModIndex[targetMod]! < minLength
-            ? i - prefixModIndex[targetMod]!
-            : minLength;
-      }
-      prefixModIndex[prefixSum] = i;
-    }
-    return  minLength == nums.length ? -1 : minLength;
-  }
+  //     int targetMod = (prefixSum - mod + p) % p;
+  //     if (prefixModIndex.containsKey(targetMod)) {
+  //       minLength = i - prefixModIndex[targetMod]! < minLength
+  //           ? i - prefixModIndex[targetMod]!
+  //           : minLength;
+  //     }
+  //     prefixModIndex[prefixSum] = i;
+  //   }
+  //   return  minLength == nums.length ? -1 : minLength;
+  // }
 
-  print(minSubArray([1,2,3], 3));
+  // print(minSubArray([1,2,3], 3));
 }
